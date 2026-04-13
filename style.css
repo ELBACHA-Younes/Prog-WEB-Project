@@ -1,0 +1,22 @@
+.index body h1{
+    color: red;
+}
+.index body p{
+    font-size: large;
+    color: white;
+}
+*{
+    background-color: black;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+header ul{
+    display: flex;
+    gap: 1rem;
+}
