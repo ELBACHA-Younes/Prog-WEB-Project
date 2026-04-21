@@ -1,38 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" class="index">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Tracker</title>
+  <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <title>Home</title>
+
 </head>
-<header class="header">
-        <ul class="nav-links">
-            <li>
-                <a href="profile.html">Profile</a>
-            </li>
-
-            <li>
-                <a href="progress.html">Progress</a>
-            </li>
-
-            <li>
-                <a href="workouts.html">Workouts</a>
-            </li>
-
-            <li>
-                <a href="add.html">ADD</a>
-            </li>
-        </ul>
-
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
-    </header>
 <body>
-    <h1>Home/Dashboard</h1>
-    <p>Welcome to your workouts tracker website <br>
-        where WE will be tracking your workouts together. <br>
-        let's enjoy the journey!!
-    </p>
+
+  <video autoplay muted loop id="bg-video">
+    <source src="assets/video.mp4" type="video/mp4">
+  </video>
+
+  <header>
+    <div class="logo">FITRACK</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Track Workouts</a></li>
+        <li><a href="add.html">Add Workout</a></li>
+        <li><a href="progress.html">Goals</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>TRACK YOUR FITNESS JOURNEY</h1>
+    <p>Stay consistent. Stay strong. Your progress starts here.</p>
+    <button onclick="scrollToSection()">Get Started</button>
+  </section>
+
+  <section class="cards-section" id="cards">
+    
+    <div class="card" onclick="goToPage('workouts.html')">
+      <div class="overlay">View & Track Workouts</div>
+    </div>
+
+    <div class="card" onclick="goToPage('add.html')">
+      <div class="overlay">Add New Workout</div>
+    </div>
+
+    <div class="card" onclick="goToPage('progress.html')">
+      <div class="overlay">Track Your Goals</div>
+    </div>
+
+    <div class="card" onclick="goToPage('profile.html')">
+      <div class="overlay">View Your Profile</div>
+    </div>
+
+  </section>
+
+  <section class="contact" id="contact">
+
+        <div class="input-box">
+
+            <h2 class="section-title">Contact US</h2>
+
+            <div class="input">
+                <input type="text" placeholder="example@email.com">
+            </div>
+
+            <div class="btn">Submit</div>
+        </div>
+    </section>
+<br><br>
+  <footer>
+    <p>© 2026 EL BACHA Younes. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>

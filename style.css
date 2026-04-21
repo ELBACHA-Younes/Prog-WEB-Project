@@ -1,22 +1,281 @@
-.index body h1{
-    color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
-.index body p{
-    font-size: large;
-    color: white;
+
+/* background Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
-*{
-    background-color: black;
-    place-items: center;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    scroll-behavior: smooth;
-    list-style: none;
+
+/* header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  z-index: 10;
 }
-header ul{
+
+.logo {
+  font-size: 50px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul li a:hover {
+  color: #00ffcc;
+}
+
+/* hero section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero button {
+  padding: 20px 50px;
+  border: none;
+  background: #00ffcc;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.hero button:hover {
+  background: white;
+}
+
+/* Cards section */
+.cards-section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 100px 20px;
+}
+
+/* cards styling */
+.card {
+  position: relative;
+  height: 250px;
+  background-size: cover;
+  background-position: left;
+  cursor: pointer;
+  border-radius: 30px;
+  overflow: hidden;
+  
+}
+
+
+/* card images */
+.card:nth-child(1) {
+  background-image: url('../assets/workout.jpg');
+}
+.card:nth-child(2) {
+  background-image: url('../assets/add.jpg');
+}
+.card:nth-child(3) {
+  background-image: url('../assets/goals.jpg');
+}
+.card:nth-child(4) {
+  background-image: url('../assets/profile.jpg');
+}
+
+/* Overlay text */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+}
+
+
+
+.input-box{
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    color: white;
+    font-size: 2rem;
+}
+.input-box input{
+    border-radius: 3rem;
+    border: 2px solid white(255, 255, 255);
+    padding: 2rem 8rem;
+    font-size: 2rem;
+}
+.input-box input::placeholder{
+    font-size: 2rem;
+}
+/* button */
+.btn{
+    font-size: 1.5rem;
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    text-wrap: nowrap;
+    transition: 0.2s ease-in-out;
+    background-color: #00ffcc;
+    color: black;
+}
+.btn:hover{
+    background-color: white;
+    
+}
+/* responsivee */
+@media (max-width: 1024px) {
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .cards-section {
+    grid-template-columns: 1fr;
+    padding: 80px 30px;
+  }
+
+  header {
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+
+  .cards-section {
+    padding: 60px 20px;
+    gap: 15px;
+  }
+
+  .card {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
 }
