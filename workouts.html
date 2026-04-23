@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Workouts</title>
+  <meta charset="UTF-8">
+  <title>Track Workouts</title>
+  <link rel="stylesheet" href="css/workouts.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<header>
+    <div class="logo">FITRACK</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Track Workouts</a></li>
+        <li><a href="add.html">Add Workout</a></li>
+        <li><a href="progress.html">Goals</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
 <body>
-    
+
+  <!-- Background Image -->
+  <div class="bg-image"></div>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <div class="section strength">
+      <h2>Strength</h2>
+
+      <div class="workout-list" id="strength-list">
+        
+        <!-- Example items -->
+        <div class="workout-card">
+          <p><strong>Type:</strong> Chest Workout</p>
+          <p><strong>Date:</strong> 2026-04-21</p>
+          <p><strong>Rating:</strong> ⭐⭐⭐⭐</p>
+          <p><strong>Notes:</strong> Good session, felt strong</p>
+        </div>
+        <div class="workout-card">
+          <p><strong>Type:</strong> Back and biceps Workout</p>
+          <p><strong>Date:</strong> 2026-04-23</p>
+          <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+          <p><strong>Notes:</strong> Great session, felt stronger</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section cardio">
+      <h2>Cardio</h2>
+
+      <div class="workout-list" id="cardio-list">
+
+        <!-- Example items -->
+        <div class="workout-card">
+          <p><strong>Type:</strong> Running</p>
+          <p><strong>Date:</strong> 2026-04-21</p>
+          <p><strong>Time:</strong> 30 min</p>
+          <p><strong>Rating:</strong> ⭐⭐⭐</p>
+          <p><strong>Notes:</strong> Tiring but worth it</p>
+        </div>
+        <div class="workout-card">
+          <p><strong>Type:</strong> Incline treadmill walk</p>
+          <p><strong>Date:</strong> 2026-04-25</p>
+          <p><strong>Time:</strong> 20 min</p>
+          <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+          <p><strong>Notes:</strong> My favorite cardio to do</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -35,6 +35,13 @@ header {
   font-weight: bold;
   color: #00ffcc;
 }
+.logo:hover {
+    font-size: 55px;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
 
 nav ul {
   display: flex;
@@ -55,6 +62,7 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #00ffcc;
+  font-size: 25px;
 }
 
 /* hero section */
@@ -69,12 +77,12 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-  font-size: 50px;
+  font-size: 100px;
   margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
@@ -92,6 +100,7 @@ nav ul li a:hover {
 
 .hero button:hover {
   background: white;
+    padding: 21px 55px;
 }
 
 /* Cards section */
@@ -112,7 +121,7 @@ nav ul li a:hover {
   cursor: pointer;
   border-radius: 30px;
   overflow: hidden;
-  
+  transition: 0.3s;
 }
 
 
@@ -143,9 +152,13 @@ nav ul li a:hover {
   align-items: center;
   opacity: 0;
   transition: 0.3s;
-  font-size: 20px;
+  font-size: 30px;
+  font-family: sans-serif;
 }
-
+.card:hover{
+    height: 300px;
+    
+}
 .card:hover .overlay {
   opacity: 1;
 }
@@ -223,13 +236,15 @@ footer {
 
   header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   nav ul {
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
+    align-items: center;
   }
 
   nav ul li {
@@ -272,7 +287,7 @@ footer {
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   footer {

@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 50px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+.logo:hover {
+    font-size: 55px;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul li a:hover {
+  color: #00ffcc;
+  font-size: 25px;
+}
+/* Background */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/bg.png') no-repeat center center/cover;
+  z-index: -1;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  padding: 140px 20px 20px; /* leave space for header */
+  gap: 20px;
+}
+
+/* Sections */
+.section {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  overflow-y: auto;
+}
+
+/* Titres */
+.section h2 {
+    font-size: 50px;
+    font-family: sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00ffcc;
+    transition: 0.3s;
+}
+.section:hover h2{
+    font-size: 70px;
+}
+
+/* Workout list */
+.workout-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards */
+.workout-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 20px;
+  border-left: 10px solid #00ffcc;
+  border-right: 10px solid #00ffcc;
+  transition: 0.3s;
+}
+
+.workout-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  font-size: 25px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+  .container {
+    padding: 100px 15px 20px;
+    gap: 15px;
+  }
+
+  .section h2 {
+    font-size: 40px;
+  }
+
+  .workout-card {
+    padding: 12px;
+  }
+  header {
+    padding: 15px 30px;
+  }
+}
+@media (max-width: 768px) {
+    header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+  .container {
+    flex-direction: column; /* stack sections */
+    height: auto;
+    padding: 400px 15px 20px;
+  }
+
+  .section {
+    width: 100%;
+  }
+
+  .section h2 {
+    font-size: 30px;
+    
+  }
+
+  .workout-card p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+    .logo {
+    font-size: 30px;
+  }
+  .section {
+    padding: 15px;
+  }
+
+  .section h2 {
+    font-size: 25px;
+  }
+
+  .workout-card {
+    padding: 10px;
+  }
+
+  .workout-card p {
+    font-size: 13px;
+  }
+}
