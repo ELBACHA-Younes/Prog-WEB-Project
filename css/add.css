@@ -106,12 +106,14 @@ input[type="radio"] {
   font-size: 80px;
   letter-spacing: 4px;
   margin-bottom: 12px;
+  animation: fadeUp 0.7s ease 0.15s both;
 }
 
 .hero p {
   font-size: 24px;
   margin-bottom: 30px;
   opacity: 0.85;
+  animation: fadeUp 0.8s ease 0.15s both;
 }
 
 .hero button {
@@ -125,6 +127,7 @@ input[type="radio"] {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
   margin-top: 20px;
+  animation: fadeUp 1s ease 0.15s both;
 }
 
 .hero button:hover {
@@ -146,6 +149,7 @@ input[type="radio"] {
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+  animation: fadeUp 0.7s ease 0.15s both;
 }
 
 .dots label:hover {
@@ -276,4 +280,10 @@ input[type="radio"] {
     .logo {
     font-size: 30px;
   }
+}
+
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

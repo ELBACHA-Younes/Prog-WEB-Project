@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Your Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
-    
+
+  <header>
+    <div class="logo">FITRACK</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Track Workouts</a></li>
+        <li><a href="add.html">Add Workout</a></li>
+        <li><a href="progress.html">Goals</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- PROFILE CARD -->
+    <div class="profile-card">
+
+      <!-- Profile Picture -->
+      <div class="avatar-wrapper">
+        <img id="avatar-img" src="" alt="Profile Picture">
+        <div class="avatar-placeholder" id="avatar-placeholder">?</div>
+        <label class="avatar-edit" for="avatar-upload" title="Change photo">➕</label>
+        <input type="file" id="avatar-upload" accept="image/*">
+      </div>
+
+      <!-- Info Fields -->
+      <div class="info-fields">
+
+        <div class="field-group">
+          <label>Full Name</label>
+          <div class="field-row">
+            <span class="field-value" id="display-name">—</span>
+            <button class="edit-btn" onclick="editField('name')">Edit</button>
+          </div>
+          <input type="text" class="field-input hidden" id="input-name" placeholder="Your name">
+        </div>
+
+        <div class="field-group">
+          <label>Age</label>
+          <div class="field-row">
+            <span class="field-value" id="display-age">—</span>
+            <button class="edit-btn" onclick="editField('age')">Edit</button>
+          </div>
+          <input type="number" class="field-input hidden" id="input-age" placeholder="Your age" min="1" max="120">
+        </div>
+
+        <div class="field-group">
+          <label>Member Since</label>
+          <div class="field-row">
+            <span class="field-value" id="display-date">—</span>
+            <button class="edit-btn" onclick="editField('date')">Edit</button>
+          </div>
+          <input type="date" class="field-input hidden" id="input-date">
+        </div>
+
+      </div>
+
+      <!-- Save Button -->
+      <button class="save-btn" onclick="saveProfile()">Save Profile</button>
+      <p class="success-msg" id="success-msg">✅ Profile saved!</p>
+
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+      <a href="index.html">Home</a>
+      <a href="workouts.html">Track</a>
+      <a href="add.html">➕ Add</a>
+      <a href="progress.html">Records</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+
+  </main>
+
+  <script src="js/profile.js"></script>
 </body>
 </html>
