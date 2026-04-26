@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0a0a0a;
+  color: white;
+}
+
+/* ── HEADER ── */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 50px;
+  font-weight: bold;
+  color: #00ffcc;
+  transition: transform 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s, font-size 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00ffcc;
+  font-size: 25px;
+}
+
+/* ── RADIO INPUTS ── */
+input[type="radio"] {
+  display: none;
+}
+
+/* ── HERO ── */
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* stays fixed while scrolling */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  transition: background-image 0.5s ease;
+  position: relative;
+}
+
+/* Dark overlay so text is always readable */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero h1,
+.hero p,
+.hero button,
+.dots {
+  position: relative;
+  z-index: 1;
+}
+
+.hero.strength {
+  background-image: url('../assets/add_strenght.jpg');
+}
+
+.hero.cardio {
+  background-image: url('../assets/add_cardio.jpg');
+}
+
+.hero h1 {
+  font-size: 80px;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 30px;
+  opacity: 0.85;
+}
+
+.hero button {
+  padding: 16px 50px;
+  border: none;
+  background: #00ffcc;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+.hero button:hover {
+  background: white;
+  transform: scale(1.05);
+}
+
+/* ── DOTS ── */
+.dots {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.dots label {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dots label:hover {
+  background: #00ffcc;
+  transform: scale(1.2);
+}
+
+#s1:checked ~ header ~ section .dots label[for="s1"],
+#s2:checked ~ header ~ section .dots label[for="s2"] {
+  background: #00ffcc;
+}
+
+/* ── FORMS SECTION ── */
+.forms-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: #0a0a0a;
+}
+
+.form {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  width: 420px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+}
+
+.form.active {
+  display: flex;
+}
+
+.form h2 {
+  font-size: 26px;
+  letter-spacing: 3px;
+  color: #00ffcc;
+  margin-bottom: 6px;
+}
+
+.form input,
+.form select,
+.form textarea {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border-color: #00ffcc;
+}
+
+.form select option {
+  background: #1a1a1a;
+  color: white;
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form button[type="submit"] {
+  padding: 14px;
+  background: #00ffcc;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 6px;
+}
+
+.form button[type="submit"]:hover {
+  background: white;
+  transform: scale(1.03);
+}
+
+/* Success message */
+.success-msg {
+  display: none;
+  text-align: center;
+  color: #00ffcc;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+  header {
+    padding: 15px 30px;
+  }
+}
+@media (max-width: 768px) {
+    header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+@media (max-width: 480px) {
+    .logo {
+    font-size: 30px;
+  }
+}

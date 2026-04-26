@@ -116,7 +116,22 @@ nav ul li a:hover {
   padding: 20px;
   font-size: 25px;
 }
+.delete-btn {
+  margin-top: 10px;
+  padding: 6px 16px;
+  background: transparent;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
 
+.delete-btn:hover {
+  background: #ff4d4d;
+  color: white;
+}
 /* Responsive */
 @media (max-width: 1024px) {
 
