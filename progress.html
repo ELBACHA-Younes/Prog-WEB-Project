@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Progress</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Records</title>
+  <link rel="stylesheet" href="css/progress.css">
 </head>
 <body>
-    
+
+  <header>
+    <div class="logo">FITRACK</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="workouts.html">Track Workouts</a></li>
+        <li><a href="add.html">Add Workout</a></li>
+        <li><a href="progress.html">Goals</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="bg-image"></div>
+
+  <main class="container">
+
+    <div class="page-title">
+      <h1>Personal Records</h1>
+      <p>Track your best performances. Break them.</p>
+    </div>
+
+    <!-- LIFTS SECTION -->
+    <section class="pr-section">
+      <div class="section-header">
+        <span class="section-icon">🏋️</span>
+        <h2>Heaviest Lifts</h2>
+        <button class="add-btn" onclick="openModal('lift')">+ Add Record</button>
+      </div>
+      <div class="records-grid" id="lift-list">
+        <div class="empty-msg">No lift records yet. Add your first!</div>
+      </div>
+    </section>
+
+    <!-- RUNS SECTION -->
+    <section class="pr-section">
+      <div class="section-header">
+        <span class="section-icon">🏃</span>
+        <h2>Longest Runs</h2>
+        <button class="add-btn" onclick="openModal('run')">+ Add Record</button>
+      </div>
+      <div class="records-grid" id="run-list">
+        <div class="empty-msg">No run records yet. Add your first!</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+  <div class="modal" id="modal">
+    <h3 id="modal-title">Add Record</h3>
+
+    <div class="form-group">
+      <label>Exercise / Name</label>
+      <input type="text" id="rec-name" placeholder="e.g. Bench Press">
+    </div>
+
+    <div class="form-group" id="weight-group">
+      <label>Weight (kg)</label>
+      <input type="number" id="rec-weight" placeholder="e.g. 100" min="0">
+    </div>
+
+    <div class="form-group" id="distance-group" style="display:none">
+      <label>Distance (km)</label>
+      <input type="number" id="rec-distance" placeholder="e.g. 10" min="0" step="0.1">
+    </div>
+
+    <div class="form-group" id="time-group" style="display:none">
+      <label>Time (minutes)</label>
+      <input type="number" id="rec-time" placeholder="e.g. 45" min="0">
+    </div>
+
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" id="rec-date">
+    </div>
+
+    <div class="form-group">
+      <label>Notes</label>
+      <textarea id="rec-notes" placeholder="Any details..."></textarea>
+    </div>
+
+    <div class="modal-actions">
+      <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+      <button class="save-btn" onclick="saveRecord()">Save Record</button>
+    </div>
+  </div>
+
+  <script src="js/progress.js"></script>
 </body>
 </html>

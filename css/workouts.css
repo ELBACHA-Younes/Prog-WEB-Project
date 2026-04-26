@@ -2,9 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
-
+body{
+  font-family: 'Segoe UI', sans-serif;
+}
+/* ── HEADER ── */
 header {
   position: fixed;
   top: 0;
@@ -13,39 +15,36 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  z-index: 10;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  z-index: 100;
 }
 
 .logo {
   font-size: 50px;
   font-weight: bold;
   color: #00ffcc;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
 }
+
 .logo:hover {
-    font-size: 55px;
-    font-weight: bold;
-    color: white;
-    transition: 0.3s;
-    cursor: pointer;
+  transform: scale(1.1);
+  color: white;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-}
-
-nav ul li {
-  margin-left: 20px;
+  gap: 25px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  transition: 0.3s;
   font-weight: bold;
   font-size: 20px;
+  transition: color 0.3s, font-size 0.3s;
 }
 
 nav ul li a:hover {
@@ -89,9 +88,11 @@ nav ul li a:hover {
     margin-bottom: 20px;
     color: #00ffcc;
     transition: 0.3s;
+    text-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
 }
 .section:hover h2{
     font-size: 70px;
+    
 }
 
 /* Workout list */
