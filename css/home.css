@@ -38,6 +38,7 @@ header {
   color: #00ffcc;
   cursor: pointer;
   transition: transform 0.3s, color 0.3s;
+    text-shadow: 1px 0 30px rgba(0, 255, 204, 0.3);
 }
 
 .logo:hover {
@@ -110,18 +111,25 @@ nav ul li a:hover {
 /* Cards section */
 .cards-section {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-  padding: 100px 20px;
+  padding: 120px 40px 60px;
+  flex-wrap: wrap;
 }
 
 /* cards styling */
 .card {
+  flex: 1;               
+  min-width: 150px;
   position: relative;
-  height: 250px;
+  width: 220px;
+  height: 700px;
+  flex-shrink: 0;
   background-size: cover;
-  background-position: left;
+  background-position: center;
   cursor: pointer;
   border-radius: 30px;
   overflow: hidden;
@@ -131,16 +139,16 @@ nav ul li a:hover {
 
 /* card images */
 .card:nth-child(1) {
-  background-image: url('../assets/workout.jpg');
+  background-image: url('../assets/newcard1.JPG');
 }
 .card:nth-child(2) {
-  background-image: url('../assets/add.jpg');
+  background-image: url('../assets/newcard2.JPG');
 }
 .card:nth-child(3) {
-  background-image: url('../assets/goals.jpg');
+  background-image: url('../assets/newcard3.JPG');
 }
 .card:nth-child(4) {
-  background-image: url('../assets/profile.jpg');
+  background-image: url('../assets/newcard4.JPG');
 }
 
 /* Overlay text */
@@ -158,10 +166,15 @@ nav ul li a:hover {
   transition: 0.3s;
   font-size: 30px;
   font-family: sans-serif;
+  font-weight: 1000;
+  font-style: italic;
+  text-shadow: 1px 0 30px rgba(0, 255, 204, 0.3);
+  transform: scaleY(1.2);
+
 }
-.card:hover{
-    height: 300px;
-    
+.card:hover {
+  flex: 2;               
+  height: 700px;
 }
 .card:hover .overlay {
   opacity: 1;
@@ -229,6 +242,12 @@ footer {
     grid-template-columns: 1fr;
     padding: 80px 30px;
   }
+  .card {
+    height: 420px;
+  }
+  .card:hover {
+    height: 470px;
+  }
 
   header {
     padding: 15px 30px;
@@ -271,12 +290,17 @@ footer {
 
 
   .cards-section {
-    padding: 60px 20px;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px 40px;
   }
-
   .card {
-    height: 200px;
+    width: 90%;
+    height: 500px;
+  }
+  .card:hover {
+    width: 90%;
+    height: 540px;
   }
 }
 

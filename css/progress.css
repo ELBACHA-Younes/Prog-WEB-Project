@@ -31,6 +31,7 @@ header {
   color: #00ffcc;
   cursor: pointer;
   transition: transform 0.3s, color 0.3s;
+    text-shadow: 1px 0 30px rgba(0, 255, 204, 0.3);
 }
 
 .logo:hover {

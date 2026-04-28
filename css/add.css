@@ -31,6 +31,8 @@ header {
   color: #00ffcc;
   cursor: pointer;
   transition: transform 0.3s, color 0.3s;
+    text-shadow: 1px 0 30px rgba(0, 255, 204, 0.3);
+
 }
 
 .logo:hover {
@@ -107,6 +109,7 @@ input[type="radio"] {
   letter-spacing: 4px;
   margin-bottom: 12px;
   animation: fadeUp 0.7s ease 0.15s both;
+    text-shadow: 1px 0 30px rgba(0, 255, 204, 0.3);
 }
 
 .hero p {
