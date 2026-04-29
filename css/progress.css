@@ -13,7 +13,7 @@ body {
 
 /* ── HEADER ── */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   padding: 30px 50px;
@@ -346,6 +346,13 @@ nav ul li a:hover {
   transform: scale(1.03);
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-20px); }
@@ -364,16 +371,29 @@ nav ul li a:hover {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  header {
+  .menu-toggle {
+        display: block;
+  }
+  nav{
+    display: none;
+    position: absolute;
+    top: 95px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.65);
+    width: 100%;
+  }
+  nav.active {
+        display: block;
+  }
+  nav ul {
     flex-direction: column;
-    padding: 15px 20px;
-    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center;
   }
 
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
+  nav ul li {
+    margin: 10px 0;
   }
 
   .page-title h1 {

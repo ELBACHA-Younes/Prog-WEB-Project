@@ -84,3 +84,8 @@ function saveWorkout(data) {
   workouts.push({ ...data, id: Date.now() });
   localStorage.setItem("workouts", JSON.stringify(workouts));
 }
+
+function toggleMenu() {
+    const nav = document.querySelector("nav");
+    nav.classList.toggle("active");
+}

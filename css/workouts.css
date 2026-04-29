@@ -8,7 +8,7 @@ body{
 }
 /* ── HEADER ── */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   padding: 30px 50px;
@@ -137,6 +137,14 @@ nav ul li a:hover {
   background: #ff4d4d;
   color: white;
 }
+
+.menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
 
@@ -157,12 +165,20 @@ nav ul li a:hover {
   }
 }
 @media (max-width: 768px) {
-    header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .menu-toggle {
+        display: block;
   }
-
+  nav{
+    display: none;
+    position: absolute;
+    top: 95px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.65);
+    width: 100%;
+  }
+  nav.active {
+        display: block;
+  }
   nav ul {
     flex-direction: column;
     width: 100%;

@@ -283,7 +283,9 @@ nav ul li a:hover {
     padding: 15px 20px;
     gap: 10px;
   }
-
+  .top-nav{
+    display: none;
+  }
   nav ul {
     flex-wrap: wrap;
     justify-content: center;

@@ -126,3 +126,9 @@ function createCard(record) {
 
 // ── INIT ──
 renderRecords();
+
+
+function toggleMenu() {
+    const nav = document.querySelector("nav");
+    nav.classList.toggle("active");
+}
