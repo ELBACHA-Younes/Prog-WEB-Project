@@ -14,12 +14,13 @@
 
   <header>
     <div class="logo">FITRACK</div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="workouts.html">Track Workouts</a></li>
         <li><a href="add.html">Add Workout</a></li>
-        <li><a href="progress.html">Goals</a></li>
+        <li><a href="progress.html">Personal Records</a></li>
         <li><a href="profile.html">Profile</a></li>
       </ul>
     </nav>
@@ -42,7 +43,7 @@
     </div>
 
     <div class="card" onclick="goToPage('progress.html')">
-      <div class="overlay">Track Your Goals</div>
+      <div class="overlay">Track Your Personal Records</div>
     </div>
 
     <div class="card" onclick="goToPage('profile.html')">
@@ -51,19 +52,38 @@
 
   </section>
 
-  <section class="contact" id="contact">
+<section class="contact" id="contact">
+  <div class="contact-wrapper">
+    <div class="contact-header">
+      <span class="contact-tag">GET IN TOUCH</span>
+      <h2>Contact Us</h2>
+      <p>Have a question or feedback? We'd love to hear from you.</p>
+    </div>
 
-        <div class="input-box">
-
-            <h2 class="section-title">Contact US</h2>
-
-            <div class="input">
-                <input type="text" placeholder="example@email.com">
-            </div>
-
-            <div class="btn">Submit</div>
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" placeholder="Your name" />
         </div>
-    </section>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" placeholder="example@email.com" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" rows="5" placeholder="Write your message here..."></textarea>
+      </div>
+      <button class="contact-btn" onclick="submitContact()">
+        <span>Send Message</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+      <p class="form-feedback" id="form-feedback"></p>
+    </div>
+  </div>
+</section>
+
 <br><br>
   <footer>
     <p>© 2026 EL BACHA Younes. All rights reserved.</p>

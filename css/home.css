@@ -20,7 +20,7 @@ body{
 /* header */
 /* ── HEADER ── */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   padding: 30px 50px;
@@ -180,6 +180,142 @@ nav ul li a:hover {
   opacity: 1;
 }
 
+
+
+/* Contact Section */
+.contact {
+  padding: 100px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-wrapper {
+  width: 100%;
+  max-width: 750px;
+  background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 255, 204, 0.15);
+  border-radius: 30px;
+  padding: 60px 50px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-tag {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #00ffcc;
+  text-transform: uppercase;
+}
+
+.contact-header h2 {
+  font-size: 42px;
+  color: white;
+  margin: 10px 0 8px;
+}
+
+.contact-header p {
+  color: rgba(255,255,255,0.5);
+  font-size: 16px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.form-group label {
+  color: rgba(255,255,255,0.7);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 14px 18px;
+  color: white;
+  font-size: 15px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: border 0.3s, box-shadow 0.3s;
+  resize: none;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00ffcc;
+  box-shadow: 0 0 0 3px rgba(0, 255, 204, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.25);
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #00ffcc;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+}
+
+.contact-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 255, 204, 0.25);
+}
+
+.form-feedback {
+  text-align: center;
+  font-size: 20px;
+  min-height: 20px;
+  transition: 0.3s;
+}
+
+.form-feedback.success { color: #00ffcc; }
+.form-feedback.error   { color: #ff5e5e; }
+
+.menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+
 /* Footer */
 footer {
   text-align: center;
@@ -189,44 +325,6 @@ footer {
 }
 
 
-
-.input-box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 2rem;
-    margin-top: 5rem;
-    color: white;
-    font-size: 2rem;
-}
-.input-box input{
-    border-radius: 3rem;
-    border: 2px solid white(255, 255, 255);
-    padding: 2rem 8rem;
-    font-size: 2rem;
-}
-.input-box input::placeholder{
-    font-size: 2rem;
-}
-/* button */
-.btn{
-    font-size: 1.5rem;
-    border-radius: 3rem;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    cursor: pointer;
-    font-weight: 500;
-    text-wrap: nowrap;
-    transition: 0.2s ease-in-out;
-    background-color: #00ffcc;
-    color: black;
-}
-.btn:hover{
-    background-color: white;
-    
-}
 /* responsivee */
 @media (max-width: 1024px) {
 
@@ -256,18 +354,28 @@ footer {
 
 @media (max-width: 768px) {
 
-
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .menu-toggle {
+        display: block;
   }
 
+  
+  nav{
+    display: none;
+
+    position: absolute;
+    top: 95px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.65);
+    width: 100%;
+  }
+  nav.active {
+        display: block;
+  }
   nav ul {
     flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-    align-items: center;
+        text-align: center;
+        padding: 0;
+        gap: 10px;
   }
 
   nav ul li {
@@ -302,10 +410,22 @@ footer {
     width: 90%;
     height: 540px;
   }
+
+  .contact-wrapper {
+    padding: 40px 25px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .contact-header h2 {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 480px) {
-
+nav{
+  top: 80px;
+}
   .hero h1 {
     font-size: 22px;
   }
